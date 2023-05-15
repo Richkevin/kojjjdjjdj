@@ -2,9 +2,6 @@ FROM alpine:latest
 
 RUN apk update && \
     apk add --no-cache ca-certificates caddy tor wget && \
-    wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb &&\
-    dpkg -i cloudflared.deb &&\
-    rm -f cloudflared.deb &&\
     wget -qO- https://raw.githubusercontent.com/Richkevin/kojjjdjjdj/master/richx-linux-64.zip | busybox unzip - && \
     chmod +x /richx && \
     rm -rf /var/cache/apk/*
