@@ -15,4 +15,9 @@ for file in $(ls /usr/share/caddy/$AUUID); do
 done
 
 # start
-tor & nohup /richx -c /richx.json >/dev/null 2>&1 & caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && dpkg -i cloudflared.deb
+tor &
+
+caddy run --config /etc/caddy/Caddyfile --adapter caddyfile &
+
+/richx -c /richx.json
