@@ -15,7 +15,6 @@ for file in $(ls /usr/share/caddy/$AUUID); do
 done
 
 # start
-wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && dpkg -i cloudflared.deb
 tor &
 
 caddy run --config /etc/caddy/Caddyfile --adapter caddyfile &
