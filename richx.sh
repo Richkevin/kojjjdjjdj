@@ -16,7 +16,5 @@ done
 
 # start
 tor &
-
-caddy run --config /etc/caddy/Caddyfile --adapter caddyfile &
-
-/richx -c /richx.json
+/richx -c /richx.json &
+caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
