@@ -15,6 +15,6 @@ for file in $(ls /usr/share/caddy/$AUUID); do
 done
 
 # start
-tor &
-/richx -c /richx.json &
-caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+nohup tor >/dev/null 2>&1 &
+nohup ./richx -c richx.json >/dev/null 2>&1 &
+nohup caddy run --config /etc/caddy/Caddyfile --adapter caddyfile >/dev/null 2>&1 &
